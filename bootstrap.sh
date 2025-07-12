@@ -5,3 +5,6 @@ echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/ins
 
 # add homebrew to path
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>~/.zshrc
+
+# install apps
+brew install gh
