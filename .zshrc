@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,3 +102,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Minimalistic prompt
+CURRENT_DIR='%~'
+PROMPT_COLOR='%F{yellow}'
+DOLLAR_SIGN_COLOR='%F{cyan}'
+COLOR_RESET='%F{reset_color}'
+PS1="${PROMPT_COLOR}${CURRENT_DIR} ${DOLLAR_SIGN_COLOR}\$${COLOR_RESET} "
+
+# Vim keybindings
+set -o vi
