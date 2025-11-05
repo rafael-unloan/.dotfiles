@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # install homebrew
 # pipe from echo to avoid prompt
 # https://github.com/Homebrew/legacy-homebrew/issues/46779#issuecomment-162819088
