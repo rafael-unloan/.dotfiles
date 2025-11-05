@@ -10,3 +10,6 @@ echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>~/.zshrc
 
 # install apps
 brew install gh
+
+# Misc
+echo 'set -o vi' >>~/.zshrc
