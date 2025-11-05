@@ -11,5 +11,8 @@ echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>~/.zshrc
 # install apps
 brew install gh
 
-# Misc
+# install docker containers
+docker run --restart always -d -v /var/run/docker.sock:/var/run/docker.sock -p 9988:8080 --name dozzle amir20/dozzle:latest
+
+# misc
 echo 'set -o vi' >>~/.zshrc
