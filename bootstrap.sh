@@ -6,13 +6,24 @@
 echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # add homebrew to path
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>~/.zshrc
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "${HOME}/.zshrc"
+source "${HOME}/.zshrc"
 
 # install apps
 brew install gh
 
+# misc - zsh vi mode and keybindings
+cat << 'EOF' >> ~/.zshrc
+set -o vi
+# Allow forward search
+stty -ixon
+
+bindkey -v
+bindkey "^H" backward-kill-word
+bindkey "^?" backward-delete-char
+bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
+EOF
+
 # install docker containers
 docker run --restart always -d -v /var/run/docker.sock:/var/run/docker.sock -p 9988:8080 --name dozzle amir20/dozzle:latest
-
-# misc
-echo 'set -o vi' >>~/.zshrc
