@@ -33,3 +33,7 @@ EOF
 
 # install docker containers
 docker run --restart always -d -v /var/run/docker.sock:/var/run/docker.sock -p 9988:8080 --name dozzle amir20/dozzle:latest
+
+# update vscode to use tmux as the default terminal
+sed -i 's/"terminal\.integrated\.defaultProfile\.\(linux\|osx\)": ".*"/"terminal.integrated.defaultProfile.\1": "tmux"/g' ~/core/.vscode/settings.json
+git update-index --assume-unchanged ~/core/.vscode/settings.json
