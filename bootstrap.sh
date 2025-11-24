@@ -17,6 +17,8 @@ sudo apt-get update
 sudo apt-get install build-essential # for cc
 sudo apt install fd-find fzf ripgrep bat delta
 
+npm install -g @github/copilot
+
 # misc - zsh vi mode and keybindings
 cat << 'EOF' >> ~/.zshrc
 set -o vi
