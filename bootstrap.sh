@@ -12,6 +12,11 @@ source "${HOME}/.zshrc"
 # install apps
 brew install gh
 
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+sudo apt-get update
+sudo apt-get install build-essential # for cc
+sudo apt install fd-find fzf ripgrep bat delta
+
 # misc - zsh vi mode and keybindings
 cat << 'EOF' >> ~/.zshrc
 set -o vi
