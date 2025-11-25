@@ -10,12 +10,11 @@ echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "${HOME}/.zshrc
 source "${HOME}/.zshrc"
 
 # install apps
-brew install gh
+brew install gh neovim ripgrep bat delta fd fzf
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 sudo apt-get update
 sudo apt-get install build-essential # for cc
-sudo apt install fd-find fzf ripgrep bat delta
 
 npm install -g @github/copilot
 
@@ -35,6 +34,11 @@ EOF
 cat << 'EOF' >> ~/.tmux.conf
 set -g default-shell /bin/zsh
 set -g mouse on
+
+bind C-h select-pane -L  # move left
+bind C-j select-pane -D  # move down
+bind C-k select-pane -U  # move up
+bind C-l select-pane -R  # move right
 EOF
 
 # install docker containers
