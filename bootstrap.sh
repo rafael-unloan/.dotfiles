@@ -16,7 +16,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 sudo apt-get update
 sudo apt-get install build-essential # for cc
 
-npm install -g @github/copilot
+npm install -g @github/copilot typescript-language-server typescript
 
 # misc - zsh vi mode and keybindings
 cat << 'EOF' >> ~/.zshrc
@@ -39,6 +39,9 @@ bind C-h select-pane -L  # move left
 bind C-j select-pane -D  # move down
 bind C-k select-pane -U  # move up
 bind C-l select-pane -R  # move right
+
+set-option -sg escape-time 10
+set-option -g default-terminal "screen-256color"
 EOF
 
 # install docker containers
