@@ -10,7 +10,7 @@ echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "${HOME}/.zshrc
 source "${HOME}/.zshrc"
 
 # install apps
-brew install gh neovim ripgrep bat delta fd fzf
+brew install gh neovim ripgrep bat delta fd fzf copilot
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 sudo apt-get update
@@ -46,3 +46,5 @@ EOF
 
 # install docker containers
 docker run --restart always -d -v /var/run/docker.sock:/var/run/docker.sock -p 9988:8080 --name dozzle amir20/dozzle:latest
+
+# TODO Auto clone git@github.com:rafael-unloan/nvim-config.git
