@@ -47,4 +47,5 @@ EOF
 # install docker containers
 docker run --restart always -d -v /var/run/docker.sock:/var/run/docker.sock -p 9988:8080 --name dozzle amir20/dozzle:latest
 
-# TODO Auto clone git@github.com:rafael-unloan/nvim-config.git
+# set up nvim
+gh repo clone rafael-unloan/nvim-config ~/.config/nvim
