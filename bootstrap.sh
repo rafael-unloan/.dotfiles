@@ -29,6 +29,8 @@ bindkey "^H" backward-kill-word
 bindkey "^?" backward-delete-char
 bindkey '^R' history-incremental-search-backward
 bindkey '^S' history-incremental-search-forward
+
+export PATH=/home/coder/.opencode/bin:$PATH
 EOF
 
 cat << 'EOF' >> ~/.tmux.conf
