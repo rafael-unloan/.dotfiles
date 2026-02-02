@@ -46,6 +46,22 @@ set-option -sg escape-time 10
 set-option -g default-terminal "screen-256color"
 EOF
 
+# opencode
+npm i -g opencode-ai
+mkdir -p ~/.config/opencode
+cat << 'EOF' >> ~/.config/opencode/opencode.json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "github-copilot/claude-opus-4.5",
+  "permission": {
+    "bash": {
+      "*": "allow",
+      "rm *": "deny"
+    }
+  }
+}
+EOF
+
 # install docker containers
 docker run --restart always -d -v /var/run/docker.sock:/var/run/docker.sock -p 9988:8080 --name dozzle amir20/dozzle:latest
 
