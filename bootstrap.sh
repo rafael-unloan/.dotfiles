@@ -10,7 +10,7 @@ echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "${HOME}/.zshrc
 source "${HOME}/.zshrc"
 
 # install apps
-brew install gh neovim ripgrep bat delta fd fzf
+brew install gh neovim ripgrep bat delta fd fzf ncdu
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 sudo apt-get update
