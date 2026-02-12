@@ -65,5 +65,8 @@ EOF
 # install docker containers
 docker run --restart always -d -v /var/run/docker.sock:/var/run/docker.sock -p 9988:8080 --name dozzle amir20/dozzle:latest
 
+# cron job to prune docker every 30 minutes
+(crontab -l 2>/dev/null; echo "*/30 * * * * docker system prune -f") | crontab -
+
 # set up nvim
 gh repo clone rafael-unloan/nvim-config ~/.config/nvim
