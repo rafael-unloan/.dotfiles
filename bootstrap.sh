@@ -56,7 +56,7 @@ cat << 'EOF' >> ~/.config/opencode/opencode.json
   "permission": {
     "bash": {
       "*": "allow",
-      "rm *": "deny"
+      "rm *": "ask"
     }
   }
 }
