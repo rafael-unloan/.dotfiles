@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# Ensure bootstrap only runs once
+BOOTSTRAP_MARKER="$HOME/.dotfiles_bootstrapped"
+if [ -f "$BOOTSTRAP_MARKER" ]; then
+    echo "Bootstrap already completed. Remove $BOOTSTRAP_MARKER to re-run."
+    exit 0
+fi
+
 # install homebrew
 # pipe from echo to avoid prompt
 # https://github.com/Homebrew/legacy-homebrew/issues/46779#issuecomment-162819088
@@ -70,3 +77,7 @@ docker run --restart always -d -v /var/run/docker.sock:/var/run/docker.sock -p 9
 
 # set up nvim
 gh repo clone rafael-unloan/nvim-config ~/.config/nvim
+
+# Mark bootstrap as completed
+touch "$BOOTSTRAP_MARKER"
+echo "Bootstrap completed successfully."
