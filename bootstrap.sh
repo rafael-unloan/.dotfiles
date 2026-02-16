@@ -60,11 +60,16 @@ cat << 'EOF' >> ~/.config/opencode/opencode.json
 {
   "$schema": "https://opencode.ai/config.json",
   "model": "github-copilot/claude-opus-4.5",
+  "small_model": "github-copilot/claude-haiku-4.5",
   "permission": {
     "bash": {
       "*": "allow",
-      "rm *": "ask"
+      "rm *": "deny"
     }
+  },
+  "instructions": [".github/copilot-instructions.md", ".github/instructions/*.md"],
+  "skills": {
+    "paths": [".github/skills/**/SKILL.md"]
   }
 }
 EOF
