@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+export HTTP_PROXY=localhost:3128
+export HTTPS_PROXY=localhost:3128
+export NODE_TLS_REJECT_UNAUTHORIZED=0
+
+exec opencode "$@"

@@ -81,6 +81,8 @@ cat << 'EOF' >> ~/.config/opencode/opencode.json
   "plugin": ["@plannotator/opencode@latest"]
 }
 EOF
+# wrapper script to set up the alpaca proxy, etc.
+cp "$(dirname "$0")/opencode-proxy" /home/coder/.opencode/bin/opencode-proxy
 
 # install docker containers
 docker run --restart always -d -v /var/run/docker.sock:/var/run/docker.sock -p 9988:8080 --name dozzle amir20/dozzle:latest
