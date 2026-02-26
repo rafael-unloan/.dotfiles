@@ -70,7 +70,15 @@ cat << 'EOF' >> ~/.config/opencode/opencode.json
   "instructions": [".github/copilot-instructions.md", ".github/instructions/*.md"],
   "skills": {
     "paths": [".github/skills/**/SKILL.md"]
-  }
+  },
+  "mcp": {
+    "atlassian": {
+      "type": "remote",
+      "url": "https://mcp.atlassian.com/v1/mcp",
+      "enabled": true
+    }
+  },
+  "plugin": ["@plannotator/opencode@latest"]
 }
 EOF
 
